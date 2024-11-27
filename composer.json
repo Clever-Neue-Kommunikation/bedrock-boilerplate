@@ -59,7 +59,8 @@
     "clever/sage-boilerplate": "dev-main",
     "wpengine/advanced-custom-fields-pro": "^6.3",
     "log1x/acf-composer": "^3.2",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-theme/twentytwentyfive": "^1.0",
+    "log1x/navi": "^3.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
