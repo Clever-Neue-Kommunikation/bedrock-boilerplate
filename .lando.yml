@@ -1,0 +1,56 @@
+name: sage-starter
+recipe: wordpress
+
+config:
+  php: "8.3"
+  composer_version: 2-latest
+  webroot: web
+
+services:
+  appserver:
+    build:
+      - composer install
+      - cd /app/web/app/themes/sage && composer install
+    overrides:
+      environment:
+        DB_HOST: database
+        DB_NAME: wordpress
+        DB_USER: wordpress
+        DB_PASSWORD: wordpress
+        WP_HOME: http://sage-starter.lndo.site/
+        WP_SITEURL: ${WP_HOME}/wp
+        WP_ENV: development
+        AUTH_KEY: "GC;VTjE:6xMXi?!0}fRkP`c9F(T,%7/o{>2]0CS^RRogi*(vNIviJ4q<sYG}32I<"
+        SECURE_AUTH_KEY: "tgk+C*684FGwHvQn[4FlY[es_CB7;%>2M_U4}H<b<+lt1rElx+Bt9M)}uaNy>>HD"
+        LOGGED_IN_KEY: "zG;rp>GUZhT[&r=}F?}]^?AmS|tImG]%^C85|GZaZ4|C`8S&DLZX&tw*RP}HX>eC"
+        NONCE_KEY: "L+rir5[?m.D3.#c!c7o+zAm@yje*mCd^k>xG_loi6pdd7Ys4)OFdzutb&n[TtMH["
+        AUTH_SALT: ",{u4::p:LRRX4vc^qtK)+OWk<|9@)!wpa`)[b9vA$wSP@vW8NK>:K^^7S7nbC6dp"
+        SECURE_AUTH_SALT: "rzlv6k8),b4]3-g4OA5$Ar,E_)xDY^YnQ-teQG#m]A&wv:mwrOaS!.OSxc-,fIvw"
+        LOGGED_IN_SALT: "PXtD)_W:ntKl:[ho-=<@B;O*8d`&-H2*Au)jXbSqtqcqxh59y.d[O_87h,sq|4*s"
+        NONCE_SALT: "6L@P@^$!q/C}4W0MLG{GAl&]!Hf&N^|vd@6i77]&==IIallhg@]P0HEHyezD-9l-"
+
+  theme:
+    type: node:20
+    build:
+      - cd /app/web/app/themes/sage && yarn
+    command: cd /app/web/app/themes/sage && yarn dev
+    overrides:
+      environment:
+        BUD_BROWSERSLIST_UPDATE: false
+        WP_URL: http://sage-starter.lndo.site
+        THEME_URL: http://theme.sage-starter.lndo.site
+      depends_on:
+        appserver:
+          condition: service_started
+
+tooling:
+  yarn:
+    dir: /app/web/app/themes/sage
+    service: theme
+  init-wp:
+    service: appserver
+    cmd: /app/init.sh
+
+proxy:
+  theme:
+    - theme.sage-starter.lndo.site:3000
