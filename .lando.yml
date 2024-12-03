@@ -1,4 +1,4 @@
-name: bedrock-boilerplate
+name: bedrock-sage-boilerplate
 recipe: wordpress
 env_file:
   - .env
@@ -13,11 +13,11 @@ config:
 
 proxy:
   appserver_nginx:
-    - bedrock-boilerplate.lndo.site
+    - bedrock-sage-boilerplate.lndo.site
   mailhog:
-    - mail.bedrock-boilerplate.lndo.site
+    - mail.bedrock-sage-boilerplate.lndo.site
   theme:
-    - theme.bedrock-boilerplate.lndo.site:3000
+    - theme.bedrock-sage-boilerplate.lndo.site:3000
 
 services:
   mailhog:
@@ -32,15 +32,15 @@ services:
     #   ports:
     #     - 3000:3000
     #     - 3001:3001
-    build:
-      - cd /app/web/app/themes/sage-boilerplate && yarn && yarn build
-    command: cd /app/web/app/themes/sage-boilerplate && yarn dev
-  appserver_nginx:
-    build_as_root:
-      - apt-get install -y subversion
-    build:
-      - composer install
-      - cd /app/web/app/themes/sage-boilerplate && composer install
+  #   build:
+  #     - cd /app/web/app/themes/sage-boilerplate && yarn && yarn build
+  #   command: cd /app/web/app/themes/sage-boilerplate && yarn dev
+  # appserver_nginx:
+  #   build_as_root:
+  #     # - apt-get install -y subversion
+  #   build:
+  #     - composer install
+  #     - cd /app/web/app/themes/sage-boilerplate && composer install
 
 tooling:
   yarn:
