@@ -53,7 +53,8 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "allure/sage": "dev-main"
+    "allure/sage": "dev-main",
+    "roots/acorn": "^4.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -84,6 +85,9 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ],
     "test": [
       "phpcs"
     ]
