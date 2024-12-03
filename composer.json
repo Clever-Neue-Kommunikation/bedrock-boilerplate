@@ -38,10 +38,6 @@
       ]
     },
     {
-      "type": "git",
-      "url": "https://github.com/Clever-Neue-Kommunikation/sage-boilerplate.git"
-    },
-    {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
     }
@@ -56,7 +52,6 @@
     "roots/wordpress": "6.7",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
-    "clever/sage-boilerplate": "dev-main",
     "wpengine/advanced-custom-fields-pro": "^6.3",
     "log1x/acf-composer": "^3.2",
     "wpackagist-theme/twentytwentyfive": "^1.0",
