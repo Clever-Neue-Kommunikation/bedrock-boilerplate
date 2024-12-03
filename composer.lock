@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "463d5c995c8079b41260365af805b283",
+    "content-hash": "9ef4eeb22ad9dd01d3a27f6482d7d12b",
     "packages": [
+        {
+            "name": "allure/sage",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kinglouie/sage-starter.git",
+                "reference": "fa6fa5a3238963b9a7ca6828a606dc680a7281b6"
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13"
+            },
+            "suggest": {
+                "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0)."
+            },
+            "default-branch": true,
+            "type": "wordpress-theme",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "App\\Providers\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Hollerbach",
+                    "email": "matthias@allu.re",
+                    "homepage": "https://allu.re"
+                }
+            ],
+            "description": "WordPress starter theme with a modern development workflow",
+            "homepage": "https://roots.io/sage/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2024-12-03T15:07:04+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v2.3.0",
@@ -1606,6 +1654,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "allure/sage": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
