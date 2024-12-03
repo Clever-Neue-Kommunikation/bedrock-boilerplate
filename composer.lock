@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kinglouie/sage-starter.git",
-                "reference": "fa6fa5a3238963b9a7ca6828a606dc680a7281b6"
+                "reference": "2b2e52d9d50ba1d7a234354e15a4bf97a66cf279"
             },
             "require": {
                 "php": ">=8.1"
@@ -52,7 +52,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2024-12-03T15:07:04+00:00"
+            "time": "2024-12-03T16:13:33+00:00"
         },
         {
             "name": "brick/math",
