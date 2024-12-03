@@ -12,9 +12,6 @@ web/app/cache/*
 web/wp
 web/.htaccess
 
-# Wordpress-Theme
-web/app/themes/sage-boilerplate
-
 # Logs
 *.log
 
