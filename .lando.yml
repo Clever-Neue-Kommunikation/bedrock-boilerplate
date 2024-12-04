@@ -18,7 +18,7 @@ services:
         DB_USER: wordpress
         DB_PASSWORD: wordpress
         WP_HOME: http://sage-starter.lndo.site/
-        WP_SITEURL: ${WP_HOME}/wp
+        WP_SITEURL: http://sage-starter.lndo.site/wp
         WP_ENV: development
         AUTH_KEY: "GC;VTjE:6xMXi?!0}fRkP`c9F(T,%7/o{>2]0CS^RRogi*(vNIviJ4q<sYG}32I<"
         SECURE_AUTH_KEY: "tgk+C*684FGwHvQn[4FlY[es_CB7;%>2M_U4}H<b<+lt1rElx+Bt9M)}uaNy>>HD"
