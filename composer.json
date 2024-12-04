@@ -40,6 +40,10 @@
     {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/Clever-Neue-Kommunikation/sage-boilerplate.git"
     }
   ],
   "require": {
@@ -49,13 +53,14 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.7",
+    "roots/wordpress": "6.7.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpengine/advanced-custom-fields-pro": "^6.3",
     "log1x/acf-composer": "^3.2",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "log1x/navi": "^3.1"
+    "clever/sage-boilerplate": "dev-main",
+    "roots/acorn": "^4.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -87,6 +92,9 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ],
     "test": [
       "phpcs"
     ]
