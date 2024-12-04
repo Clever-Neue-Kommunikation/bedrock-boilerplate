@@ -56,8 +56,6 @@
     "roots/wordpress": "6.7.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
-    "wpengine/advanced-custom-fields-pro": "^6.3",
-    "log1x/acf-composer": "^3.2",
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "clever/sage-boilerplate": "dev-main",
     "roots/acorn": "^4.3"
