@@ -12,9 +12,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kinglouie/sage-starter.git",
-                "reference": "2b2e52d9d50ba1d7a234354e15a4bf97a66cf279"
+                "reference": "51524f47a8365a7bd52f4f232df0af620b37cff7"
             },
             "require": {
+                "log1x/navi": "^3.1",
                 "php": ">=8.1"
             },
             "require-dev": {
@@ -52,7 +53,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2024-12-03T16:13:33+00:00"
+            "time": "2024-12-04T09:50:32+00:00"
         },
         {
             "name": "brick/math",
@@ -2716,6 +2717,71 @@
                 }
             ],
             "time": "2024-09-21T08:32:55+00:00"
+        },
+        {
+            "name": "log1x/navi",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/navi.git",
+                "reference": "97fa923a1eb1aa92d17984117b8e0f56a0a818ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/navi/zipball/97fa923a1eb1aa92d17984117b8e0f56a0a818ab",
+                "reference": "97fa923a1eb1aa92d17984117b8e0f56a0a818ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.14",
+                "roots/acorn": "^4.3"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Log1x\\Navi\\Providers\\NaviServiceProvider"
+                    ],
+                    "aliases": {
+                        "Navi": "Log1x\\Navi\\Facades\\Navi"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Log1x\\Navi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "A developer-friendly alternative to the WordPress NavWalker.",
+            "keywords": [
+                "navwalker",
+                "wordpress",
+                "wordpress-plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/log1x/navi/issues",
+                "source": "https://github.com/Log1x/navi/tree/v3.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Log1x",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-10-21T23:10:14+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6423,12 +6489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "d63bf61e4925002df49bcec7043f7c821084c365"
+                "reference": "5f2153c997f1ad01915f80dd7c81ebf2b3a75c03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d63bf61e4925002df49bcec7043f7c821084c365",
-                "reference": "d63bf61e4925002df49bcec7043f7c821084c365",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f2153c997f1ad01915f80dd7c81ebf2b3a75c03",
+                "reference": "5f2153c997f1ad01915f80dd7c81ebf2b3a75c03",
                 "shasum": ""
             },
             "conflict": {
@@ -6995,7 +7061,7 @@
                 "simple-updates/phpwhois": "<=1",
                 "simplesamlphp/saml2": "<4.6.14|>=5.0.0.0-alpha1,<5.0.0.0-alpha18",
                 "simplesamlphp/saml2-legacy": "<4.6.14",
-                "simplesamlphp/simplesamlphp": "<2.0.15|>=2.1,<2.1.7|>=2.2,<2.2.4|>=2.3,<2.3.4",
+                "simplesamlphp/simplesamlphp": "<1.18.6",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplesamlphp/simplesamlphp-module-openid": "<1",
                 "simplesamlphp/simplesamlphp-module-openidprovider": "<0.9",
@@ -7262,7 +7328,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-03T15:05:29+00:00"
+            "time": "2024-12-03T20:05:54+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
