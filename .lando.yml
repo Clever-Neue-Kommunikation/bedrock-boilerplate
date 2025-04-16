@@ -17,8 +17,8 @@ services:
         DB_NAME: wordpress
         DB_USER: wordpress
         DB_PASSWORD: wordpress
-        WP_HOME: http://bedrock-sage-boilerplate.lndo.site/
-        WP_SITEURL: http://bedrock-sage-boilerplate.lndo.site/wp
+        WP_HOME: https://bedrock-sage-boilerplate.lndo.site/
+        WP_SITEURL: https://bedrock-sage-boilerplate.lndo.site/wp
         WP_ENV: development
         AUTH_KEY: "GC;VTjE:6xMXi?!0}fRkP`c9F(T,%7/o{>2]0CS^RRogi*(vNIviJ4q<sYG}32I<"
         SECURE_AUTH_KEY: "tgk+C*684FGwHvQn[4FlY[es_CB7;%>2M_U4}H<b<+lt1rElx+Bt9M)}uaNy>>HD"
@@ -37,8 +37,8 @@ services:
     overrides:
       environment:
         BUD_BROWSERSLIST_UPDATE: false
-        WP_URL: http://bedrock-sage-boilerplate.lndo.site
-        THEME_URL: http://theme.bedrock-sage-boilerplate.lndo.site
+        WP_URL: https://bedrock-sage-boilerplate.lndo.site
+        THEME_URL: https://theme.bedrock-sage-boilerplate.lndo.site
       depends_on:
         appserver:
           condition: service_started
