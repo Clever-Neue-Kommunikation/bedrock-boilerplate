@@ -1,13 +1,14 @@
 name: bedrock-sage-boilerplate
 recipe: wordpress
-
+ 
 config:
   php: "8.3"
   composer_version: 2-latest
   webroot: web
-
+ 
 services:
   appserver:
+    ssl: false
     build:
       - composer install
       - cd /app/web/app/themes/sage-boilerplate && composer install
@@ -17,8 +18,8 @@ services:
         DB_NAME: wordpress
         DB_USER: wordpress
         DB_PASSWORD: wordpress
-        WP_HOME: https://bedrock-sage-boilerplate.lndo.site/
-        WP_SITEURL: https://bedrock-sage-boilerplate.lndo.site/wp
+        WP_HOME: http://bedrock-sage-boilerplate.lndo.site/
+        WP_SITEURL: http://bedrock-sage-boilerplate.lndo.site/wp
         WP_ENV: development
         AUTH_KEY: "GC;VTjE:6xMXi?!0}fRkP`c9F(T,%7/o{>2]0CS^RRogi*(vNIviJ4q<sYG}32I<"
         SECURE_AUTH_KEY: "tgk+C*684FGwHvQn[4FlY[es_CB7;%>2M_U4}H<b<+lt1rElx+Bt9M)}uaNy>>HD"
@@ -28,29 +29,30 @@ services:
         SECURE_AUTH_SALT: "rzlv6k8),b4]3-g4OA5$Ar,E_)xDY^YnQ-teQG#m]A&wv:mwrOaS!.OSxc-,fIvw"
         LOGGED_IN_SALT: "PXtD)_W:ntKl:[ho-=<@B;O*8d`&-H2*Au)jXbSqtqcqxh59y.d[O_87h,sq|4*s"
         NONCE_SALT: "6L@P@^$!q/C}4W0MLG{GAl&]!Hf&N^|vd@6i77]&==IIallhg@]P0HEHyezD-9l-"
-
+ 
   theme:
     type: node:20
+    scanner: false
+    ports:
+      - 3009:3009
     build:
-      - cd /app/web/app/themes/sage-boilerplate && yarn
-    command: cd /app/web/app/themes/sage-boilerplate && yarn dev
+      - cd /app/web/app/themes/sage-boilerplate && npm install && npm run build
+    # command: cd /app/web/app/themes/pan && npm run dev
     overrides:
       environment:
-        BUD_BROWSERSLIST_UPDATE: false
-        WP_URL: https://bedrock-sage-boilerplate.lndo.site
-        THEME_URL: https://theme.bedrock-sage-boilerplate.lndo.site
+        APP_URL: http://bedrock-sage-boilerplate.lndo.site
       depends_on:
         appserver:
           condition: service_started
-
+ 
 tooling:
-  yarn:
-    dir: /app/web/app/themes/sage-boilerplate
+  dev:
     service: theme
-  init-wp:
-    service: appserver
-    cmd: /app/init.sh
-
-proxy:
-  theme:
-    - theme.bedrock-sage-boilerplate.lndo.site:3000
+    description: Run Vite dev server
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run dev"
+  build-theme:
+    service: theme
+    description: Build the theme
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run build"
+ 
+ 
