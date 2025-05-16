@@ -57,7 +57,7 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "clever/sage-boilerplate": "dev-main",
+    "clever/sage-boilerplate": "dev-sage11",
     "roots/acorn": "^4.3",
     "wpengine/advanced-custom-fields-pro": "^6.2"
   },
