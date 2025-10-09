@@ -58,6 +58,7 @@
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "clever/sage-boilerplate": "dev-sage11",
     "roots/acorn": "^5.0",
+    "wpengine/advanced-custom-fields-pro": "^6.6",
     "roots/wordpress": "6.8.3",
     "roots/wordpress-no-content": "6.8.3"
   },
