@@ -112,6 +112,8 @@ Config::define('NONCE_SALT', env('NONCE_SALT'));
 /**
  * Custom Settings
  */
+Config::define('WP_MEMORY_LIMIT', env('WP_MEMORY_LIMIT') ?: '256M');
+Config::define('WP_CACHE', env('WP_CACHE') ?: false);
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);
 Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 
@@ -142,9 +144,10 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
-if (file_exists($env_config)) {
+if (is_readable($env_config)) {
     require_once $env_config;
 }
+
 
 Config::apply();
 
