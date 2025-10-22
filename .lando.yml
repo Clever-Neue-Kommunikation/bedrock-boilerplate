@@ -7,6 +7,8 @@ config:
   webroot: web
  
 services:
+  database:
+    type: mysql:8.0
   appserver:
     ssl: false
     build:
@@ -54,5 +56,27 @@ tooling:
     service: theme
     description: Build the theme
     cmd: "cd /app/web/app/themes/sage-boilerplate && npm run build"
+  lint:js:
+    service: theme
+    description: Run ESLint checks on JS files
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run lint:js"
+  lint:fix:
+    service: theme
+    description: Run ESLint and auto-fix issues
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run lint:fix"
+  format:
+    service: theme
+    description: Run Prettier formatter on all files
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run format"
+  lint:css:
+    service: theme
+    description: Run Stylelint on CSS/SCSS files
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run lint:css"
+  lint:css:fix:
+    service: theme
+    description: Run Stylelint with auto-fix
+    cmd: "cd /app/web/app/themes/sage-boilerplate && npm run lint:css:fix"
+
+
  
  
