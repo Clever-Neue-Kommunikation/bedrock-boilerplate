@@ -30,14 +30,9 @@ lando wp core install \
   --admin_email=admin@my-first-wordpress-app.lndo.site \
   --path=web/wp
 
-<strong>Step 7: </strong></br>
-Run lando yarn from the theme directory to install dependencies</br>
-Update bud.config.js with your local dev URL</br>
-lando yarn build — Compile assets
-
 # TO DO
 
 - <del>Implement ACF to make components for gutenberg-blocks</del>
 - Add borlabs-cookies to boilerplate
-- develope navwalker
+- <del>develope navwalker</del>
 
