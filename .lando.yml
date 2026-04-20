@@ -1,4 +1,4 @@
-name: bedrock-sage-boilerplate
+name: quambusch
 recipe: wordpress
  
 config:
@@ -20,8 +20,8 @@ services:
         DB_NAME: wordpress
         DB_USER: wordpress
         DB_PASSWORD: wordpress
-        WP_HOME: http://bedrock-sage-boilerplate.lndo.site/
-        WP_SITEURL: http://bedrock-sage-boilerplate.lndo.site/wp
+        WP_HOME: http://quambusch.lndo.site/
+        WP_SITEURL: http://quambusch.lndo.site/wp
         WP_ENV: development
         AUTH_KEY: "GC;VTjE:6xMXi?!0}fRkP`c9F(T,%7/o{>2]0CS^RRogi*(vNIviJ4q<sYG}32I<"
         SECURE_AUTH_KEY: "tgk+C*684FGwHvQn[4FlY[es_CB7;%>2M_U4}H<b<+lt1rElx+Bt9M)}uaNy>>HD"
@@ -42,7 +42,7 @@ services:
     # command: cd /app/web/app/themes/pan && npm run dev
     overrides:
       environment:
-        APP_URL: http://bedrock-sage-boilerplate.lndo.site
+        APP_URL: http://quambusch.lndo.site
       depends_on:
         appserver:
           condition: service_started
